@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Headlines We Wrote: A Vision Exercise Reflection on the Whatcom County Justice Project</title>
+<meta name="description" content="An interactive reflection on the community visioning exercise that opened the Whatcom County Justice Project, the goals it surfaced, and the choices ahead." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+:root {
+  --paper: #f7f1e3;
+  --paper-light: #faf6ec;
+  --paper-deep: #ede5d0;
+  --ink: #1f1c1a;
+  --ink-soft: #3a3530;
+  --ink-quiet: #6b635a;
+  --rule: #cdbf9f;
+  --rule-soft: #e3d8bc;
+
+  --teal: #2a8c8a;
+  --teal-soft: #b9dcdb;
+  --coral: #d8543e;
+  --coral-soft: #f4cdc4;
+  --marigold: #e9a93a;
+  --marigold-soft: #f7e1a4;
+  --lavender: #8a6da5;
+  --lavender-soft: #d8c9e3;
+  --sky: #4f8db1;
+  --sky-soft: #c3dbe8;
+  --rose: #c2557a;
+  --rose-soft: #ecc5d2;
+
+  --shadow-paper: 0 1px 2px rgba(31,28,26,0.06), 0 8px 24px rgba(31,28,26,0.08);
+  --shadow-deep: 0 2px 4px rgba(31,28,26,0.08), 0 18px 40px rgba(31,28,26,0.14);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(233, 169, 58, 0.07), transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(42, 140, 138, 0.06), transparent 50%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle paper texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.11  0 0 0 0 0.1  0 0 0 0.04 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+  opacity: 0.55;
+}
+
+main, header, footer, section, nav { position: relative; z-index: 1; }
+
+a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--coral); }
+
+/* ============ MASTHEAD ============ */
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: 28px clamp(20px, 4vw, 56px) 22px;
+  background: var(--paper-light);
+}
+.masthead-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.masthead-brand {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.masthead-meta {
+  font-size: 0.82rem;
+  color: var(--ink-quiet);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ============ BETA BANNER ============ */
+.beta-banner {
+  background: var(--marigold-soft);
+  border-bottom: 1px solid var(--rule);
+  padding: 10px clamp(20px, 4vw, 56px);
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.beta-banner strong {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding: clamp(50px, 9vw, 110px) clamp(20px, 5vw, 56px) clamp(40px, 6vw, 70px);
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.eyebrow {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1.5px;
+  background: var(--coral);
+}
+h1.hero-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-variation-settings: 'opsz' 120, 'SOFT' 50;
+  font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin-bottom: 26px;
+  color: var(--ink);
+}
+.hero-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--teal);
+}
+.hero-deck {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(1.15rem, 1.9vw, 1.45rem);
+  line-height: 1.4;
+  max-width: 760px;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 0.86rem;
+  color: var(--ink-quiet);
+}
+.hero-meta-item strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+/* ============ SECTIONS ============ */
+section.chapter {
+  padding: clamp(60px, 9vw, 110px) clamp(20px, 5vw, 56px);
+  border-bottom: 1px solid var(--rule);
+}
+.chapter-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.chapter-number {
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  color: var(--coral);
+  margin-bottom: 6px;
+  line-height: 1;
+}
+h2.chapter-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 26px;
+  color: var(--ink);
+  max-width: 18ch;
+}
+h2.chapter-title.wide { max-width: 26ch; }
+.lede {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+p.body {
+  max-width: 680px;
+  margin-bottom: 1.25em;
+  color: var(--ink-soft);
+}
+p.body strong { color: var(--ink); font-weight: 600; }
+
+h3.sub {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.005em;
+  margin: 2.2em 0 1em;
+  color: var(--ink);
+}
+
+/* ============ PULL QUOTES (handwritten) ============ */
+.pullquote {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.25;
+  color: var(--ink);
+  padding: 30px 40px;
+  margin: 40px 0;
+  position: relative;
+  max-width: 800px;
+}
+.pullquote::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 4px;
+  background: var(--coral);
+  border-radius: 4px;
+}
+.pullquote cite {
+  display: block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+  margin-top: 14px;
+}
+
+/* ============ ARTIFACTS GALLERY ============ */
+.artifacts-wall {
+  margin: 56px 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.artifact {
+  background: var(--paper-light);
+  padding: 14px 14px 18px;
+  border-radius: 2px;
+  box-shadow: var(--shadow-paper);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+.artifact:nth-child(3n+1) { transform: rotate(-0.8deg); }
+.artifact:nth-child(3n+2) { transform: rotate(0.6deg); }
+.artifact:nth-child(3n+3) { transform: rotate(-0.3deg); }
+.artifact:hover {
+  transform: scale(1.02) rotate(0);
+  box-shadow: var(--shadow-deep);
+  z-index: 10;
+}
+.artifact img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1px;
+}
+.artifact-caption {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* ============ THEME GRID ============ */
+.themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin: 40px 0;
+}
+.theme-card {
+  padding: 26px 24px;
+  background: var(--paper-light);
+  border-radius: 3px;
+  border-top: 4px solid var(--teal);
+  box-shadow: var(--shadow-paper);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.theme-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-deep); }
+.theme-card:nth-child(2) { border-top-color: var(--coral); }
+.theme-card:nth-child(3) { border-top-color: var(--marigold); }
+.theme-card:nth-child(4) { border-top-color: var(--lavender); }
+.theme-card:nth-child(5) { border-top-color: var(--sky); }
+.theme-numeral {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2.2rem;
+  color: var(--ink-quiet);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.theme-card h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.18rem;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+.theme-card p {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ============ TWO-PATH COMPARISON ============ */
+.paths {
+  margin: 50px 0;
+}
+.paths-intro {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 40px;
+}
+.paths-intro p {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.path-card {
+  padding: 38px 32px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.path-a { background: linear-gradient(180deg, var(--teal-soft) 0%, #d3e9e8 100%); }
+.path-b { background: linear-gradient(180deg, var(--marigold-soft) 0%, #faecc5 100%); }
+
+.path-tag {
+  display: inline-block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 2px;
+  margin-bottom: 18px;
+  align-self: flex-start;
+}
+.path-card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.85rem;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+.path-card .path-deck {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  color: var(--ink-soft);
+}
+.path-card ul {
+  list-style: none;
+  margin-top: auto;
+}
+.path-card li {
+  padding: 8px 0 8px 22px;
+  font-size: 0.96rem;
+  position: relative;
+  color: var(--ink);
+  border-bottom: 1px dashed rgba(31,28,26,0.18);
+}
+.path-card li:last-child { border-bottom: none; }
+.path-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  border-radius: 50%;
+}
+.path-a li::before { background: var(--teal); }
+.path-b li::before { background: var(--coral); }
+
+/* ============ NEWSPAPER HEADLINES ============ */
+.newspaper {
+  margin: 60px 0 30px;
+  background: var(--paper-light);
+  padding: 40px clamp(24px, 4vw, 56px);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-paper);
+  position: relative;
+}
+.newspaper-flag {
+  text-align: center;
+  border-bottom: 3px double var(--ink);
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+.newspaper-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+.newspaper-date {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+  margin-top: 8px;
+}
+.newspaper-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0 32px;
+  flex-wrap: wrap;
+}
+.year-btn {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 10px 22px;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.year-btn:hover { border-color: var(--ink); color: var(--ink); }
+.year-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.headlines-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+.headlines-stack.cols2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.np-headline {
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 20px;
+}
+.np-headline:last-child { border-bottom: none; }
+.np-headline h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.15;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.np-headline .np-deck {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.np-byline {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+  margin-top: 10px;
+}
+
+.scenario-explain {
+  background: var(--paper-deep);
+  border-left: 4px solid var(--teal);
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 0.96rem;
+  color: var(--ink-soft);
+  border-radius: 0 3px 3px 0;
+}
+.scenario-explain strong { color: var(--ink); font-family: 'Fraunces', serif; font-weight: 600; }
+
+/* ============ DATA PANELS ============ */
+.data-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+.data-card {
+  background: var(--paper-light);
+  padding: 26px 24px;
+  border-radius: 3px;
+  box-shadow: var(--shadow-paper);
+}
+.data-figure {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1;
+  color: var(--coral);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.data-card.teal .data-figure { color: var(--teal); }
+.data-card.lavender .data-figure { color: var(--lavender); }
+.data-card.sky .data-figure { color: var(--sky); }
+.data-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+  margin-bottom: 14px;
+}
+.data-context {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ============ CHART CONTAINER ============ */
+.chart-container {
+  background: var(--paper-light);
+  padding: 28px;
+  border-radius: 3px;
+  box-shadow: var(--shadow-paper);
+  margin: 30px 0;
+}
+.chart-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.chart-subtitle {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.86rem;
+  color: var(--ink-quiet);
+  margin-bottom: 20px;
+}
+.chart-source {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.76rem;
+  color: var(--ink-quiet);
+  margin-top: 16px;
+  letter-spacing: 0.03em;
+}
+
+/* ============ CHOICE MAP ============ */
+.choice-list { margin: 30px 0; }
+.choice-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+@media (min-width: 760px) {
+  .choice-item {
+    grid-template-columns: 200px 1fr;
+    gap: 30px;
+  }
+}
+.choice-item:last-child { border-bottom: none; }
+.choice-label {
+  font-family: 'Caveat', cursive;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.choice-label small {
+  display: block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 4px;
+}
+.choice-body p { font-size: 0.98rem; margin-bottom: 12px; max-width: none;}
+.choice-body p:last-child { margin-bottom: 0; }
+.choice-body .from-vision {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  color: var(--teal);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+/* ============ STICKY NOTES VISUAL ECHOES ============ */
+.note-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 30px 0 40px;
+  justify-content: flex-start;
+}
+.note {
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  padding: 14px 16px;
+  width: 160px;
+  min-height: 90px;
+  box-shadow: 1px 2px 6px rgba(31,28,26,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--ink);
+  transition: transform 0.3s ease;
+}
+.note:hover { transform: scale(1.05) rotate(-1deg); z-index: 5; position: relative; }
+.note.teal { background: #c4e0df; }
+.note.yellow { background: #f9e58c; }
+.note.pink { background: #f4c3d2; }
+.note.coral { background: #f5b39d; }
+.note.lavender { background: #c9b8db; }
+.note.sky { background: #b6d3e0; }
+.note:nth-child(odd) { transform: rotate(-1.5deg); }
+.note:nth-child(even) { transform: rotate(0.8deg); }
+.note:nth-child(3n) { transform: rotate(-0.4deg); }
+
+/* ============ CLOSING ============ */
+.closing {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(80px, 12vw, 140px) clamp(20px, 5vw, 56px);
+  border-bottom: none;
+}
+.closing-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.closing .eyebrow { color: var(--marigold); }
+.closing .eyebrow::before { background: var(--marigold); }
+.closing h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+  margin-bottom: 30px;
+  max-width: 22ch;
+}
+.closing p {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--paper-deep);
+  max-width: 720px;
+  margin-bottom: 1.3em;
+}
+.closing p strong {
+  color: var(--marigold);
+  font-weight: 500;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--paper-light);
+  padding: 50px clamp(20px, 5vw, 56px) 40px;
+  border-top: 1px solid var(--rule);
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 0.86rem;
+  color: var(--ink-quiet);
+  line-height: 1.6;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.footer-col h5 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--rule-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+.disclosure {
+  background: var(--paper-deep);
+  padding: 16px 20px;
+  border-radius: 3px;
+  margin-top: 20px;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--marigold);
+}
+.disclosure strong { font-family: 'Fraunces', serif; font-weight: 600; color: var(--ink); }
+
+/* ============ LIGHTBOX FOR ARTIFACT IMAGES ============ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(31,28,26,0.94);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: min(1100px, 95vw);
+  max-height: 92vh;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  background: var(--paper);
+}
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(247,241,227,0.4);
+  background: transparent;
+  color: var(--paper);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-family: 'Fraunces', serif;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--paper);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  background: rgba(31,28,26,0.6);
+  padding: 8px 16px;
+  border-radius: 3px;
+}
+
+/* ============ TABLE OF CONTENTS / NAV ============ */
+.toc {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 241, 227, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 12px clamp(20px, 4vw, 56px);
+}
+.toc-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: clamp(12px, 2vw, 30px);
+  overflow-x: auto;
+  scrollbar-width: none;
+  align-items: center;
+}
+.toc-inner::-webkit-scrollbar { display: none; }
+.toc a {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+.toc a:hover, .toc a.active {
+  color: var(--coral);
+  border-bottom-color: var(--coral);
+}
+.toc-label {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--ink-quiet);
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .hero-meta { gap: 18px; }
+  .paths-grid { grid-template-columns: 1fr; }
+  .pullquote { padding: 20px 24px; }
+  .pullquote::before { width: 3px; }
+}
+
+/* ============ STAGGERED LOAD ANIMATIONS ============ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-inner > * {
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-inner > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-inner > *:nth-child(3) { animation-delay: 0.4s; }
+.hero-inner > *:nth-child(4) { animation-delay: 0.55s; }
+</style>
+</head>
+
+<body>
+
+<!-- BETA BANNER -->
+<div class="beta-banner">
+  <strong>BETA</strong> — This is a reflective essay-dashboard, part of the Chuckanut Health Foundation's data and policy resource suite. Feedback welcome at <a href="mailto:heather@chuckanuthealthfoundation.org">heather@chuckanuthealthfoundation.org</a>.
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-brand">Chuckanut Health Foundation · Whatcom County Justice Project</div>
+    <div class="masthead-meta">A Reflection · May 2026</div>
+  </div>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+<nav class="toc">
+  <div class="toc-inner">
+    <span class="toc-label">jump to →</span>
+    <a href="#hero">Top</a>
+    <a href="#the-room">The Room</a>
+    <a href="#what-was-said">What Was Said</a>
+    <a href="#two-pathways">Two Pathways</a>
+    <a href="#headlines">The Headlines</a>
+    <a href="#choices">The Choices Ahead</a>
+    <a href="#convergence">A Shared Vision</a>
+    <a href="#methodology">Notes</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">A Community Visioning Exercise, Eighteen Months On</div>
+    <h1 class="hero-title">The Headlines <em>We Wrote</em>, and the Headlines We Will Write</h1>
+    <p class="hero-deck">In the early phase of work on the Whatcom County Justice Project, a room full of community members, county staff, providers, and partners was asked to imagine success. They covered the walls with sticky notes. They wrote the newspaper headlines they hoped to read. This is what they said, what it asks of the choices now in front of us, and the futures still very much within reach.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>Exercise Date</strong>Late 2024, early STV engagement</div>
+      <div class="hero-meta-item"><strong>Format</strong>Facilitated visioning, four prompts</div>
+      <div class="hero-meta-item"><strong>Artifacts</strong>Nine flip charts, dozens of notes</div>
+      <div class="hero-meta-item"><strong>Reading Time</strong>About 12 minutes</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 1: THE ROOM -->
+<section class="chapter" id="the-room">
+  <div class="chapter-inner">
+    <div class="chapter-number">i.</div>
+    <h2 class="chapter-title">A room that imagined deeply.</h2>
+    <p class="lede">The exercise asked four questions, each one inviting participants to think generously about what could be. Read together now, the flip charts are a remarkable record of community care, expertise, and ambition.</p>
+
+    <p class="body">Participants were asked: what would be <em>fantastic if</em> it happened? What is already <em>fantastic that</em> is happening? What <em>goals</em> would define success? And what <em>headlines</em> would the paper carry if the project worked? The format gave everyone a voice. Sticky notes were posted in clusters. Phrases were written on flip charts. Nothing required reconciliation between competing ideas. The room could hold many visions at once, and it did.</p>
+
+    <p class="body">The artifacts below are the actual record of that day. Click any image to see it full size.</p>
+
+    <div class="artifacts-wall">
+      <div class="artifact" data-img="images/Fantastic-If-1.jpg" data-caption="Wouldn't It Be Fantastic If… — sticky notes of future-state aspirations">
+        <img src="images/Fantastic-If-1.jpg" alt="Flip chart titled 'Wouldn't it be Fantastic if' with colored sticky notes about rebuilding the whole system, building within budget, and 2050 as a success" loading="lazy" />
+        <div class="artifact-caption">Fantastic If… · Aspirations</div>
+      </div>
+      <div class="artifact" data-img="images/FantasticThat_-1.jpg" data-caption="It Is Fantastic That… — appreciations of the current process">
+        <img src="images/FantasticThat_-1.jpg" alt="Flip chart titled 'It is Fantastic That' with notes about people listening, alignment on the program model, and rethinking the system" loading="lazy" />
+        <div class="artifact-caption">Fantastic That… · Process</div>
+      </div>
+      <div class="artifact" data-img="images/Goal4-1.jpg" data-caption="Goals — diversion at every point, wraparound, community health investment">
+        <img src="images/Goal4-1.jpg" alt="Handwritten GOALS flip chart listing diversion at every point in the system, wraparound support at re-entry, filling gaps in treatment, reinvestment in community health" loading="lazy" />
+        <div class="artifact-caption">Goals · System Investment</div>
+      </div>
+      <div class="artifact" data-img="images/Goals3-1.jpg" data-caption="Goals — facility-level design: trauma-informed, integration of services, corrections as a verb">
+        <img src="images/Goals3-1.jpg" alt="Sticky-note GOALS board including 'corrections to be a verb instead of a noun,' trauma-informed design, and 'we don't have to expand the facility but plan for it'" loading="lazy" />
+        <div class="artifact-caption">Goals · Facility Design</div>
+      </div>
+      <div class="artifact" data-img="images/Headline3-1.jpg" data-caption="Goals — community trust, root causes, behavioral health integrated, 200-year horizon">
+        <img src="images/Headline3-1.jpg" alt="Handwritten flip chart on Good Place to Work, Community Understands timeline-process-outcomes, Reduce Recidivism and Increase Safety, Behavior Health integrated, Meet the Need 200 years to the Future" loading="lazy" />
+        <div class="artifact-caption">Goals · Community Trust</div>
+      </div>
+      <div class="artifact" data-img="images/Goals2-1.jpg" data-caption="Goals — more programming in the jail: educational, SUD, MH, parenting">
+        <img src="images/Goals2-1.jpg" alt="Handwritten note about more programming in the jail covering educational, SUD, mental health, and parenting, plus continued collaboration between stakeholders" loading="lazy" />
+        <div class="artifact-caption">Goals · Programming</div>
+      </div>
+      <div class="artifact" data-img="images/Headline1-1.jpg" data-caption="Headline — Whatcom Fulfills Promise of Rehabilitative Justice System">
+        <img src="images/Headline1-1.jpg" alt="Handwritten future headline reading 'Whatcom Fulfills Promise of Rehabilitative Justice System: Empty Jail Beds shock community; law enforcement and prosecutor call to repurpose for treatment'" loading="lazy" />
+        <div class="artifact-caption">Headline · Rehabilitative Promise</div>
+      </div>
+      <div class="artifact" data-img="images/Headline2-1.jpg" data-caption="Headlines — facility excellence, staff wellness, hope to marginalized people">
+        <img src="images/Headline2-1.jpg" alt="Sticky-note HEADLINES board with six future headlines about staff wellness, national visitors, recidivism reduction, and innovative design" loading="lazy" />
+        <div class="artifact-caption">Headlines · Facility Excellence</div>
+      </div>
+      <div class="artifact" data-img="images/Headline4-1.jpg" data-caption="Headlines — compassionate care, DV rates plummet, business leaders rejoice in safer downtown">
+        <img src="images/Headline4-1.jpg" alt="Handwritten future headlines including 'Compassionate care facility protects Whatcom,' 'Most innovative and humane approach in the Nation,' DV rates plummet, and Obama's foundation calls" loading="lazy" />
+        <div class="artifact-caption">Headlines · Compassionate Care</div>
+      </div>
+    </div>
+
+    <div class="pullquote">
+      "2050 came, and we still consider this a highly successful project."
+      <cite>From the Wouldn't It Be Fantastic If… exercise</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2: WHAT WAS SAID -->
+<section class="chapter" id="what-was-said">
+  <div class="chapter-inner">
+    <div class="chapter-number">ii.</div>
+    <h2 class="chapter-title wide">Five themes the room returned to, again and again.</h2>
+    <p class="lede">Across all four exercises, the same commitments appeared on different sheets, in different handwriting, in different colors of ink. They were not slogans. They were practical statements of what success would look like.</p>
+
+    <div class="themes">
+      <div class="theme-card">
+        <div class="theme-numeral">i</div>
+        <h4>Diversion at every point in the system</h4>
+        <p>Law enforcement, prosecution, courts, and schools. Not a single program. A property of the whole system.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-numeral">ii</div>
+        <h4>Upstream and wraparound investment</h4>
+        <p>Re-entry support, gaps in treatment filled, dollars in housing and healthcare, behavioral health that meets people in the community.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-numeral">iii</div>
+        <h4>A facility built around outcomes</h4>
+        <p>Trauma-informed all the way through. Corrections as a verb, not a noun. Integrated services. A desirable place to work.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-numeral">iv</div>
+        <h4>Community trust as a process</h4>
+        <p>Trust equals understanding of timeline, process, and outcomes, sustained through engaged development, execution, and ongoing collaboration.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-numeral">v</div>
+        <h4>A horizon longer than the next vote</h4>
+        <p>"Meet the need 75 to 200 years to the future." The room was not thinking about a single capital decision. It was thinking about defensibility across generations.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">Phrases written by the people in the room</h3>
+    <p class="body">The notes themselves are worth reading at their original scale. A small sample, in the room's own words:</p>
+
+    <div class="note-cluster">
+      <div class="note teal">We rebuilt the whole system.</div>
+      <div class="note yellow">Wouldn't it be fantastic if the state paid for this</div>
+      <div class="note coral">We could do it all! 23 bed ITA, more outpatient, wraparound, supportive housing</div>
+      <div class="note pink">If we built the facility we want, within budget!</div>
+      <div class="note lavender">The whole of the jail was designed for better outcomes.</div>
+      <div class="note sky">We could provide the support needed upon release from treatment</div>
+      <div class="note teal">2050 came and we still consider this a highly successful project.</div>
+      <div class="note lavender">To appropriately divert people with mental health disorders out of incarceration</div>
+      <div class="note coral">Plus to drive/walk our streets &amp; see the outcomes</div>
+      <div class="note yellow">Fantastic to incentivize people with positives rather than punishment</div>
+    </div>
+
+    <div class="pullquote">
+      "Wouldn't it be fantastic if we had the data, and we got better outcomes for health and safety with $300 million, actually…"
+      <cite>From a sticky note that asked the right question early</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 3: TWO PATHWAYS -->
+<section class="chapter" id="two-pathways">
+  <div class="chapter-inner">
+    <div class="chapter-number">iii.</div>
+    <h2 class="chapter-title wide">Two pathways to success, both genuinely held.</h2>
+    <p class="lede">The exercise format invited generosity. It did not require participants to reconcile competing aspirations. Reading the artifacts now, two distinct theories of success appear alongside each other, each one a sincere expression of what success would mean.</p>
+
+    <p class="body">These are not opposing camps. Most participants held both at once. But they are different theories, and they imply different sizing decisions, different operating commitments, and different capital allocations between the jail and the Behavioral Care Center. Naming them clearly is a way of honoring the full ambition of the room.</p>
+
+    <div class="paths">
+      <div class="paths-grid">
+        <div class="path-card path-a">
+          <span class="path-tag">Pathway A</span>
+          <h3>A facility that does it well</h3>
+          <p class="path-deck">Success is felt inside the building. The jail itself is humane, well-designed, integrated with care.</p>
+          <ul>
+            <li>Trauma-informed design throughout</li>
+            <li>Behavioral health integrated</li>
+            <li>Programming for SUD, mental health, parenting, employment</li>
+            <li>A desirable place to work; staff wellness honored</li>
+            <li>No booking restrictions; serves all who need it</li>
+            <li>People leave on a path to recovery</li>
+          </ul>
+        </div>
+        <div class="path-card path-b">
+          <span class="path-tag">Pathway B</span>
+          <h3>A system that needs less of it</h3>
+          <p class="path-deck">Success is felt across the community. Fewer people enter the system in the first place.</p>
+          <ul>
+            <li>Diversion working at every decision point</li>
+            <li>Root causes addressed: addiction, mental health, housing</li>
+            <li>Recidivism declining year over year</li>
+            <li>Behavioral health filling gaps in the community</li>
+            <li>Empty beds, repurposed for treatment</li>
+            <li>The footprint of incarceration shrinks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 30px;"><strong>Both pathways were on the wall.</strong> The headline that reads <em>"Qualified corrections officers flock to new facility"</em> and the headline that reads <em>"Empty jail beds shock community"</em> were written by people in the same room at the same exercise. Both express care for what could be true about this community.</p>
+
+    <p class="body">The collective vision the room described, read most generously, is the one in which Pathway A and Pathway B constrain each other in productive ways: a better facility <strong>because</strong> it is smaller, smaller <strong>because</strong> the upstream investments are real, more humane <strong>because</strong> it is not asked to do work that should never have been its work alone. This is the vision the rest of this reflection treats as the convergent one.</p>
+
+    <p class="body">It is also worth noting whose voices were less represented at the exercise. The artifacts include relatively little about custodial security as a primary value, relatively little about the perspectives of crime victims and their families, and relatively little about the views of law enforcement leadership outside the visioning frame. A more complete picture of community preference includes those voices. This reflection synthesizes what the room said, with awareness that the room was not the whole community.</p>
+  </div>
+</section>
+
+<!-- CHAPTER 4: HEADLINES -->
+<section class="chapter" id="headlines">
+  <div class="chapter-inner">
+    <div class="chapter-number">iv.</div>
+    <h2 class="chapter-title wide">The headlines the room imagined, and the headlines still ahead.</h2>
+    <p class="lede">A headline forces a verb and a subject. When the room's hopes are read as newspaper front pages, the choices ahead come into sharper focus.</p>
+
+    <p class="body">The exercise asked participants to write the headlines they hoped to see if the project succeeded. Below is a curated reproduction of what was written, followed by two possible front pages from a decade out. Use the year toggle to compare them.</p>
+
+    <div class="newspaper">
+      <div class="newspaper-flag">
+        <div class="newspaper-name">The Whatcom Future Herald</div>
+        <div class="newspaper-date" id="np-date">Front Page · Imagined in Community Workshop, 2024</div>
+      </div>
+
+      <div class="newspaper-toggle" role="tablist" aria-label="Select scenario year">
+        <button class="year-btn active" data-year="2024" role="tab" aria-selected="true">As Imagined (2024)</button>
+        <button class="year-btn" data-year="2036a" role="tab" aria-selected="false">2036 · Pathway A Realized</button>
+        <button class="year-btn" data-year="2036c" role="tab" aria-selected="false">2036 · Both Pathways Realized</button>
+      </div>
+
+      <div id="scenario-explain-2024" class="scenario-explain">
+        <strong>What you are reading:</strong> a selection of the headlines participants actually wrote on flip charts during the visioning exercise. The handwriting and color of the original sticky notes is preserved in the artifacts gallery above.
+      </div>
+      <div id="scenario-explain-2036a" class="scenario-explain" style="display:none;">
+        <strong>What you are reading:</strong> a projection of the headlines a decade from now if the facility delivers exceptionally well on Pathway A, while the upstream and downstream investments arrive later or smaller than the vision described. None of these headlines describes scandal. They describe the gravitational pull of a system in which capital decisions are made first and operating commitments follow. This pathway is recoverable.
+      </div>
+      <div id="scenario-explain-2036c" class="scenario-explain" style="display:none;">
+        <strong>What you are reading:</strong> a projection of the headlines a decade from now if both pathways are realized together — if the facility is excellent <em>and</em> the diversion, behavioral health, housing, and re-entry investments are sustained at the levels the vision described. This is the convergent vision the room's notes described when read together.
+      </div>
+
+      <div class="headlines-stack" id="np-headlines">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <p class="body" style="margin-top: 40px;">The 2036 projections are not predictions. They are an honest reading of where current trajectories lead, and where the choices now on the County's calendar can redirect them. Every headline in the "Both Pathways" scenario is still possible. Each one requires specific decisions on specific dates.</p>
+  </div>
+</section>
+
+<!-- CHAPTER 5: CHOICES AHEAD -->
+<section class="chapter" id="choices">
+  <div class="chapter-inner">
+    <div class="chapter-number">v.</div>
+    <h2 class="chapter-title wide">The choices that connect the vision to what gets built.</h2>
+    <p class="lede">Every aspiration in the exercise implies a budget decision now visible on the calendar. None of these choices is abstract. Each one is a place where the room's two pathways meet, and the convergent vision becomes either more reachable or more deferred.</p>
+
+    <div class="data-panel">
+      <div class="data-card teal">
+        <div class="data-figure">422</div>
+        <div class="data-label">Primary 2030 Bed Forecast</div>
+        <div class="data-context">From Pasquo Planners' analysis, all-in adjusted forecast for 2030. The sizing question is whether the facility is built to this figure, or to higher contingency scenarios, and how confidently those higher scenarios are tested against active reductions in average length of stay.</div>
+      </div>
+      <div class="data-card">
+        <div class="data-figure">5</div>
+        <div class="data-label">Days of ALOS Reduction Required</div>
+        <div class="data-context">The lower-bound 458-bed scenario in Pasquo's 2050 analysis assumes average length of stay falls roughly five days below the current 24-day actual. This is a policy variable, not a demographic constant.</div>
+      </div>
+      <div class="data-card lavender">
+        <div class="data-figure">$12.58M</div>
+        <div class="data-label">BCC Annual Operating Cost</div>
+        <div class="data-context">From the STV / EP&amp;A Behavioral Care Center Final Report (March 2026). With an identified baseline funding gap of $880,600, the operating model is the test of whether Pathway B's behavioral health vision is funded as well as built.</div>
+      </div>
+      <div class="data-card sky">
+        <div class="data-figure">50%</div>
+        <div class="data-label">ILA Floor for Community Behavioral Health</div>
+        <div class="data-context">Interlocal Agreement Part II, Section 3(e). The mechanism that connects "behavioral health filling gaps in the community" to a binding financial commitment. Its disposition in the coming ILA renegotiation is decisive.</div>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">Forecast Bed Range for 2050 and the ALOS Lever</div>
+      <div class="chart-subtitle">The room asked for "no booking restrictions" and for "diversion at every point." The bed count depends on which of those is more actively pursued.</div>
+      <div style="position: relative; height: 360px; width: 100%;">
+        <canvas id="bedChart"></canvas>
+      </div>
+      <div class="chart-source">Source: Pasquo Planners Jail Population Forecast Analysis, March 2026. The 458-bed scenario assumes active ALOS reduction; the 699-bed scenario assumes ALOS holds at current levels. Both scenarios are consistent with the same booking forecast.</div>
+    </div>
+
+    <h3 class="sub">Five places where the room's vision meets a real decision</h3>
+
+    <div class="choice-list">
+      <div class="choice-item">
+        <div class="choice-label">
+          <small>Choice 01</small>
+          Sizing the facility
+        </div>
+        <div class="choice-body">
+          <div class="from-vision">From the room: "We don't have to expand the facility, but we plan for it."</div>
+          <p>The room asked for diversion at every point in the system and for a facility that need not be expanded. The bed count selected is the test of whether the stated preference for upstream investment is honored in the building itself. The asymmetry between escalation costs and the cost of building the wrong size deserves visibility in the public record alongside the cost of delay.</p>
+        </div>
+      </div>
+
+      <div class="choice-item">
+        <div class="choice-label">
+          <small>Choice 02</small>
+          The Behavioral Care Center
+        </div>
+        <div class="choice-body">
+          <div class="from-vision">From the room: "Behavioral health integrated throughout."</div>
+          <p>The room described behavioral health as integrated across the system and as filling gaps in the community. The BCC's confirmed $12.58 million annual operating cost and identified baseline funding gap make this the most concrete place where Pathway B is either funded or deferred. Strong operating commitments here turn the vision into infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="choice-item">
+        <div class="choice-label">
+          <small>Choice 03</small>
+          The 50% floor
+        </div>
+        <div class="choice-body">
+          <div class="from-vision">From the room: "Reduce cost of legal system &amp; reinvest in community health."</div>
+          <p>The Interlocal Agreement's 50% floor for community behavioral health investment is the binding mechanism that connects the room's reinvestment vision to dollars. Its disposition in the coming renegotiation is one of the most consequential decisions ahead. A 50% Recovery Working Group built with lived experience and community subject matter expertise is the practical instrument for keeping faith with the vision.</p>
+        </div>
+      </div>
+
+      <div class="choice-item">
+        <div class="choice-label">
+          <small>Choice 04</small>
+          Average length of stay
+        </div>
+        <div class="choice-body">
+          <div class="from-vision">From the room: "People to come out of jail clean / sober and on the way / path to recovery."</div>
+          <p>The room asked for people to leave on a path to recovery. That goal is incompatible with treating average length of stay as a demographic constant. The pending ADP / ALOS Reduction Workgroup, properly resourced and seated, is where the room's programmatic ambition meets operational reality.</p>
+        </div>
+      </div>
+
+      <div class="choice-item">
+        <div class="choice-label">
+          <small>Choice 05</small>
+          Trust as a process
+        </div>
+        <div class="choice-body">
+          <div class="from-vision">From the room: "Community trust = timeline, process, outcomes."</div>
+          <p>The room's equation was clear and exacting. Trust is built through engaged development, execution, and ongoing collaboration, not through a finished announcement. Public dashboards, source-cited data, open minutes, and the disclosure of analytical assumptions are the operational form of what the room called trust.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 6: CONVERGENCE -->
+<section class="chapter" id="convergence">
+  <div class="chapter-inner">
+    <div class="chapter-number">vi.</div>
+    <h2 class="chapter-title">What the room said, read together.</h2>
+    <p class="lede">If every sticky note is taken seriously, and the two pathways are allowed to constrain each other, the convergent vision the room described comes into focus.</p>
+
+    <p class="body">Whatcom County replaces an unsafe and obsolete jail with a thoughtfully sized, trauma-informed facility in a community where diversion, behavioral health treatment, and housing investments are reducing the demand for incarceration year over year. The Behavioral Care Center opens with a funded operating model, integrates with the community continuum of care, and serves populations who would otherwise have entered the jail.</p>
+
+    <p class="body">The fifty-percent floor for community behavioral health investment holds, and the community can see, year by year, where the money is going and what it is doing. Bookings decline as diversion matures. Recidivism declines as re-entry is resourced for everyone. Length of stay shortens because the system is faster, more humane, and more accountable, not because policy changes have moved the underlying need somewhere less visible.</p>
+
+    <p class="body">The facility is a desirable place to work because the people who work there are not asked to be the community's only intervention. Whatcom is studied not only because of how the building was designed, but because of the system around it. <strong>In 2050, the project is still considered a success because the community continued to invest in the upstream conditions that made the facility's size adequate.</strong></p>
+
+    <div class="pullquote">
+      "The whole of the jail was designed for better outcomes."<br>
+      "We rebuilt the whole system."
+      <cite>Two notes from the same wall</cite>
+    </div>
+
+    <p class="body">These two notes, written on the same wall, are not in tension. They are two parts of one ambition. The work ahead is to make sure both of them remain true a decade from now.</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="closing-inner">
+    <div class="eyebrow">Closing</div>
+    <h2>The exercise is a benchmark, not a finished work.</h2>
+    <p>Eighteen months ago, a group of people who care about this community wrote down what they wanted. They wanted a smaller footprint <strong>and</strong> a better building. They wanted treatment in the community <strong>and</strong> treatment in the jail. They wanted empty beds <strong>and</strong> full programs. They wanted, in the end, two things at once, and they did not have to choose between them in the room.</p>
+    <p>The choices ahead are where those two pathways become one. The capital budget is one such choice. The renegotiation of the Interlocal Agreement will be another. The operating commitments for the Behavioral Care Center, the resourcing of the working groups, the response to the next forecast revision, the disposition of the fifty-percent floor: each one is a place where the room's full ambition is either kept or quietly narrowed.</p>
+    <p>The most useful thing the exercise produced was not a vision statement. It was a record of what was said when the choices had not yet been made. <strong>That record is now a benchmark.</strong> It is worth reading, decision by decision, against the headlines the room wrote.</p>
+  </div>
+</section>
+
+<!-- NOTES & FOOTER -->
+<footer id="methodology">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>About this reflection</h5>
+        <p>This is an essay-dashboard written by Heather Flaherty, drawing on artifacts from a community visioning exercise facilitated during the early phase of STV's engagement on the Whatcom County Justice Project. The reproduced sticky notes and flip charts are the original session outputs.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Sources cited</h5>
+        <p>Pasquo Planners Jail Population Forecast Analysis (March 2026); STV / EP&amp;A Behavioral Health Analysis Final Report (March 2026); Whatcom County Interlocal Agreement; Ordinance 2023-039; PFM Financial Advisors scenarios.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Methodology</h5>
+        <p>All quoted phrases come from the original handwritten artifacts above. The convergent vision and the 2036 scenario headlines are interpretive syntheses, clearly marked. Numerical figures are drawn directly from the cited consultant reports.</p>
+      </div>
+    </div>
+
+    <div class="disclosure">
+      <strong>Disclosure:</strong> Heather Flaherty is the Executive Director of the Chuckanut Health Foundation and serves as citizen co-chair of the Incarceration Prevention and Reduction Task Force (IPRTF). This reflection is offered in a personal capacity drawing on those vantage points, and is part of CHF's data and policy resource suite intended to support an informed public conversation. Feedback and corrections are welcome.
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Chuckanut Health Foundation · Published in beta · Updated May 2026</div>
+      <div><a href="mailto:heather@chuckanuthealthfoundation.org">heather@chuckanuthealthfoundation.org</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">×</button>
+  <img id="lightbox-img" src="" alt="" />
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<script>
+// ============ HEADLINE SCENARIOS ============
+const scenarios = {
+  '2024': {
+    date: 'Front Page · Imagined in Community Workshop, 2024',
+    headlines: [
+      { headline: 'Whatcom Fulfills Promise of Rehabilitative Justice System', deck: 'Empty jail beds shock community. Law enforcement and prosecutor call to repurpose beds for treatment.', byline: 'A headline from the room' },
+      { headline: 'Most Innovative and Humane Approach in the Nation', deck: 'State-of-the-art facility leads to dramatic downturn in violent crime. Addiction rates drop due to access to care.', byline: 'A headline from the room' },
+      { headline: 'DV Rates Plummet, Family Successes Soar', deck: 'Funding secured for compassionate care facility operations. Collaborative process replicated by neighboring communities.', byline: 'A headline from the room' },
+      { headline: 'Whatcom Justice Center Delivers on Promise of Safe Jail and Healthy Outcomes', deck: 'National travel to visit new facility. People flocking to see innovative design.', byline: 'A headline from the room' },
+      { headline: 'New Justice Center Gives Hope to Marginalized People', deck: 'Facility to serve all segments of the population. New Justice Center focuses on rehabilitation.', byline: 'A headline from the room' },
+      { headline: 'Qualified Corrections Officers Flock to New Facility', deck: 'Whatcom Justice Center focuses on staff wellness. A desirable place to work.', byline: 'A headline from the room' }
+    ]
+  },
+  '2036a': {
+    date: 'Projected Front Page · 2036, Pathway A Realized',
+    headlines: [
+      { headline: 'Whatcom Opens State-of-the-Art Jail; Officials Cite Trauma-Informed Design', deck: 'Five years after opening, the facility is widely regarded as among the most humane in the country.', byline: 'Projected · Pathway A' },
+      { headline: 'Behavioral Care Center Operating Gap Persists for Third Year', deck: 'County and cities continue negotiations on long-term operating commitments. Service levels below original planning targets.', byline: 'Projected · Pathway A' },
+      { headline: 'Jail Population Holds Steady Despite Increased Capacity', deck: 'Sheriff cites booking trends. Diversion programs funded at lower levels than originally projected.', byline: 'Projected · Pathway A' },
+      { headline: 'Average Length of Stay Unchanged Since 2026, County Council Briefing Shows', deck: 'ALOS reduction workgroup recommendations partially implemented. Programmatic capacity growing.', byline: 'Projected · Pathway A' },
+      { headline: 'ILA Renegotiation Concluded; Behavioral Health Floor Restructured', deck: 'Cities and County reach new agreement on shared funding mechanisms. Community advocates raise questions about timing of investment.', byline: 'Projected · Pathway A' },
+      { headline: 'WSU Reports Recidivism Data Inconclusive Five Years After Facility Opening', deck: 'Researchers note measurement complexity. Calls for sustained re-entry investment continue.', byline: 'Projected · Pathway A' }
+    ]
+  },
+  '2036c': {
+    date: 'Projected Front Page · 2036, Both Pathways Realized',
+    headlines: [
+      { headline: 'Whatcom Marks Tenth Year of Declining Jail Population', deck: 'County and cities credit sustained behavioral health, housing, and diversion investments. Capital savings reinvested in community programs.', byline: 'Projected · Convergent' },
+      { headline: 'Behavioral Care Center Fully Funded; Wait Times for Crisis Services Cut in Half', deck: 'Five-year evaluation shows population overlap with prior jail bookings has fallen substantially. Co-Occurring Disorders facility at full operational capacity.', byline: 'Projected · Convergent' },
+      { headline: 'Average Length of Stay Down Eight Days Since 2026', deck: 'County Council briefing cites coordinated case management, expanded therapeutic court capacity, and faster pretrial processing. Sheriff and Public Defender both cited.', byline: 'Projected · Convergent' },
+      { headline: 'ILA Renegotiation Preserves 50 Percent Floor; Adds Reporting Standards', deck: 'New agreement structured around outcomes data and community-led oversight. Annual public reporting required.', byline: 'Projected · Convergent' },
+      { headline: 'Domestic Violence Service Capacity Up; Repeat Offending Down for Third Straight Year', deck: 'County prosecutor and survivor advocates jointly credit upstream investment. Service providers report stable funding for first time in a decade.', byline: 'Projected · Convergent' },
+      { headline: 'Whatcom Hosts National Visitors Studying Smaller, Better Jail Model', deck: 'Officials emphasize that the facility succeeded because the system around it did. Replication interest growing.', byline: 'Projected · Convergent' }
+    ]
+  }
+};
+
+const headlinesEl = document.getElementById('np-headlines');
+const dateEl = document.getElementById('np-date');
+const explains = {
+  '2024': document.getElementById('scenario-explain-2024'),
+  '2036a': document.getElementById('scenario-explain-2036a'),
+  '2036c': document.getElementById('scenario-explain-2036c')
+};
+
+function renderScenario(year) {
+  const sc = scenarios[year];
+  dateEl.textContent = sc.date;
+  headlinesEl.innerHTML = '';
+  headlinesEl.className = 'headlines-stack' + (sc.headlines.length >= 4 ? ' cols2' : '');
+  sc.headlines.forEach(h => {
+    const div = document.createElement('div');
+    div.className = 'np-headline';
+    div.innerHTML = `
+      <h4>${h.headline}</h4>
+      <div class="np-deck">${h.deck}</div>
+      <div class="np-byline">${h.byline}</div>
+    `;
+    headlinesEl.appendChild(div);
+  });
+  Object.keys(explains).forEach(k => { explains[k].style.display = k === year ? 'block' : 'none'; });
+}
+
+document.querySelectorAll('.year-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.year-btn').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    renderScenario(btn.dataset.year);
+  });
+});
+
+renderScenario('2024');
+
+// ============ LIGHTBOX ============
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightbox-img');
+const lbCap = document.getElementById('lightbox-caption');
+
+document.querySelectorAll('.artifact').forEach(a => {
+  a.addEventListener('click', () => {
+    lbImg.src = a.dataset.img;
+    lbImg.alt = a.dataset.caption;
+    lbCap.textContent = a.dataset.caption;
+    lightbox.classList.add('open');
+  });
+});
+
+lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') lightbox.classList.remove('open');
+});
+
+// ============ BED CHART ============
+const ctx = document.getElementById('bedChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [
+      ['458 beds', 'ALOS reduced ~5 days'],
+      ['422 beds', '2030 primary forecast'],
+      ['480 beds', 'higher contingency'],
+      ['699 beds', 'ALOS held flat to 2050']
+    ],
+    datasets: [{
+      label: 'Beds',
+      data: [458, 422, 480, 699],
+      backgroundColor: ['#2a8c8a', '#4f8db1', '#e9a93a', '#d8543e'],
+      borderRadius: 4,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1f1c1a',
+        titleFont: { family: 'Fraunces', size: 13, weight: '600' },
+        bodyFont: { family: 'IBM Plex Sans', size: 12 },
+        padding: 12,
+        cornerRadius: 3,
+        callbacks: {
+          label: ctx => `${ctx.parsed.y} beds`
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 800,
+        ticks: {
+          font: { family: 'IBM Plex Sans', size: 12 },
+          color: '#6b635a'
+        },
+        grid: { color: '#e3d8bc' },
+        title: {
+          display: true,
+          text: 'Bed count',
+          font: { family: 'IBM Plex Sans', size: 12, weight: '500' },
+          color: '#3a3530'
+        }
+      },
+      x: {
+        ticks: {
+          font: { family: 'IBM Plex Sans', size: 11 },
+          color: '#3a3530'
+        },
+        grid: { display: false }
+      }
+    }
+  }
+});
+
+// ============ TOC SCROLL SPY ============
+const sections = document.querySelectorAll('section[id], header[id]');
+const tocLinks = document.querySelectorAll('.toc a');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      tocLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
